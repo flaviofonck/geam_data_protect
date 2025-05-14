@@ -32,6 +32,19 @@
             position: relative;
             overflow: hidden;
         }
+
+        header {
+            position: relative;
+            padding: 50px 20px 50px 220px; /* Ajusta el padding izquierdo para evitar la superposición */
+        }
+    
+        header img {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 2;
+        }
+
         header::before {
             content: '';
             position: absolute;
