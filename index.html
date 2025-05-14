@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Detallado de Implementación de Protección de Datos</title>
+    <link rel="icon" href="GeamIT.png" type="image/png"> <!-- Favicon agregado -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        header {
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=1350') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.3em;
+            margin: 10px 0;
+            font-weight: 300;
+        }
+        nav {
+            background-color: #1e3a8a;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #93c5fd;
+            transform: scale(1.1);
+        }
+        section {
+            background: white;
+            padding: 40px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .section-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            font-size: 0.9em;
+            color: #4b5563;
+            text-align: center;
+            margin-top: 5px;
+        }
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 4px solid #3b82f6;
+            padding-bottom: 15px;
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #1e40af;
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: 500;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        ul li, ol li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+        }
+        table, th, td {
+            border: 1px solid #d1d5db;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: 600;
+        }
+        td {
+            background-color: #f9fafb;
+        }
+        footer {
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 0 0 12px 12px;
+            margin-top: 40px;
+            font-size: 1em;
+        }
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #1e40af;
+            transform: scale(1.05);
+        }
+        .sub-section {
+            margin-left: 25px;
+            padding-left: 25px;
+            border-left: 3px solid #93c5fd;
+        }
+        .highlight {
+            background-color: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #3b82f6;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                display: block;
+                margin: 15px 0;
+                font-size: 1em;
+            }
+            .container {
+                padding: 20px;
+            }
+            section {
+                padding: 25px;
+            }
+            .section-image {
+                max-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="GeamIT.png" alt="Logotipo de GeamIT" style="width: 150px; position: absolute; top: 50px; left: 50px; z-index: 2;">
+        <div class="header-text">
+            <h1>Plan Detallado de Implementación de Protección de Datos</h1>
+            <p>Conformidad con Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008</p>
+            <p>Grupo Energético de las Américas SAS ESP</p>
+        </div>
+    </header>
+
+
+
+
+
+    <nav>
+        <a href="#introduccion" onclick="showSlide('introduccion')">Introducción</a>
+        <a href="#contexto" onclick="showSlide('contexto')">Contexto Legal</a>
+        <a href="#plan" onclick="showSlide('plan')">Plan de Implementación</a>
+        <a href="#principios" onclick="showSlide('principios')">Principios Clave</a>
+        <a href="#plazos" onclick="showSlide('plazos')">Plazos Legales</a>
+        <a href="#riesgos" onclick="showSlide('riesgos')">Riesgos y Mitigación</a>
+        <a href="#conclusion" onclick="showSlide('conclusion')">Conclusión</a>
+    </nav>
+    <div class="container">
+        <section id="introduccion" class="slide active fade-in">
+            <img src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Concepto de protección de datos" class="section-image">
+            <p class="image-caption">Protección de datos en un entorno digital</p>
+            <h2>Introducción</h2>
+            <p>La protección de datos personales es esencial para cumplir con las normativas colombianas y generar confianza en clientes, empleados y socios. Las leyes Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008 establecen un marco robusto para garantizar el derecho al habeas data, protegiendo la privacidad y seguridad de la información personal y financiera.</p>
+            <p>Este plan detalla un enfoque integral para implementar estas normativas, incluyendo pasos prácticos, medidas técnicas y estrategias para mitigar riesgos. La meta es asegurar el cumplimiento legal, proteger datos sensibles y fortalecer la reputación empresarial.</p>
+            <div class="highlight">
+                <strong>Objetivo:</strong> Establecer un sistema de gestión de datos que cumpla con la legislación, minimice riesgos y promueva la confianza de los stakeholders.
+            </div>
+        </section>
+        <section id="contexto" class="slide fade-in">
+            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Marco legal" class="section-image">
+            <p class="image-caption">Documentos legales que rigen la protección de datos</p>
+            <h2>Contexto Legal</h2>
+            <h3>Ley 1581 de 2012</h3>
+            <p>Publicada el 17 de octubre de 2012 (Diario Oficial 48587), desarrolla el derecho constitucional al habeas data (Art. 15 y 20), estableciendo principios, derechos y obligaciones para el tratamiento de datos personales.</p>
+            <div class="sub-section">
+                <p><strong>Alcance:</strong> Aplica a entidades públicas y privadas en Colombia, con excepciones:</p>
+                <ul>
+                    <li>Bases personales o domésticas no compartidas.</li>
+                    <li>Datos para seguridad, defensa, inteligencia o periodismo.</li>
+                    <li>Información regulada por Ley 1266 de 2008 o Ley 79 de 1993.</li>
+                </ul>
+                <p><strong>Derechos de los titulares:</strong> Acceso, rectificación, eliminación, revocación y quejas ante la SIC.</p>
+                <p><strong>Obligaciones:</strong> Obtener autorización, garantizar seguridad y registrar bases de datos.</p>
+            </div>
+            <h3>Decreto 1377 de 2013</h3>
+            <p>Publicado el 27 de junio de 2013 (Diario Oficial 48834), reglamenta aspectos operativos de la Ley 1581:</p>
+            <div class="sub-section">
+                <ul>
+                    <li><strong>Autorización:</strong> Previa, expresa, informada; no se infiere del silencio.</li>
+                    <li><strong>Políticas:</strong> Detallar tratamiento y avisos de privacidad.</li>
+                    <li><strong>Transferencias internacionales:</strong> Requieren consentimiento o contratos.</li>
+                    <li><strong>Responsabilidad:</strong> Demostrar cumplimiento proactivo.</li>
+                </ul>
+            </div>
+            <h3>Ley 1266 de 2008</h3>
+            <p>Regula el habeas data financiero, enfocándose en datos crediticios y financieros.</p>
+            <div class="sub-section">
+                <ul>
+                    <li><strong>Enfoque:</strong> Confidencialidad y acceso a datos financieros.</li>
+                    <li><strong>Aplicación:</strong> Burós de crédito, entidades financieras y empresas con datos crediticios.</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>Autoridad:</strong> La Superintendencia de Industria y Comercio (SIC) supervisa el cumplimiento (<a href="https://www.sic.gov.co">sic.gov.co</a>).
+            </div>
+        </section>
+        <section id="plan" class="slide fade-in">
+            <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Plan de acción" class="section-image">
+            <p class="image-caption">Estrategia para implementar normativas</p>
+            <h2>Plan de Implementación</h2>
+            <p>Un enfoque estructurado para cumplir con las normativas, dividido en pasos prácticos:</p>
+            <ol>
+                <li><strong>Designación de un Oficial de Protección de Datos (DPO):</strong>
+                    <div class="sub-section">
+                        <p>Nombrar un DPO para:</p>
+                        <ul>
+                            <li>Supervisar cumplimiento de Ley 1581 y Decreto 1377.</li>
+                            <li>Coordinar con la SIC y titulares.</li>
+                            <li>Liderar auditorías y capacitaciones.</li>
+                            <li><strong>Ejemplo:</strong> Designar a un gerente de TI con formación en protección de datos.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Inventario de Datos Personales:</strong>
+                    <div class="sub-section">
+                        <p>Mapear todos los datos procesados:</p>
+                        <ul>
+                            <li><strong>Tipos:</strong> Empleados (nómina), clientes (compras), proveedores (contratos).</li>
+                            <li><strong>Almacenamiento:</strong> Servidores locales, AWS, Google Cloud.</li>
+                            <li><strong>Recolección:</strong> Formularios web, contratos físicos, APIs de terceros.</li>
+                            <li><strong>Acceso:</strong> Roles autorizados (RRHH, marketing, TI).</li>
+                        </ul>
+                        <p><strong>Clasificación:</strong></p>
+                        <ul>
+                            <li><strong>Públicos:</strong> Nombres en directorios públicos.</li>
+                            <li><strong>Semi-privados:</strong> Correos, teléfonos.</li>
+                            <li><strong>Privados:</strong> Salud, finanzas, biometría.</li>
+                            <li><strong>Sensibles:</strong> Religión, datos de menores (consentimiento explícito).</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Desarrollo de Políticas de Tratamiento:</strong>
+                    <div class="sub-section">
+                        <p>Crear políticas detalladas:</p>
+                        <ul>
+                            <li>Especificar procesos de recolección, uso, almacenamiento y eliminación.</li>
+                            <li>Garantizar autorizaciones previas y expresas (Decreto 1377).</li>
+                            <li>Prohibir tratamiento de datos sensibles salvo excepciones (consentimiento, interés vital).</li>
+                            <li>Incluir avisos de privacidad accesibles en sitios web y formularios.</li>
+                            <li><strong>Ejemplo de aviso:</strong> "Sus datos se usarán para facturación. Contacte a dpo@empresa.com para ejercer sus derechos."</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Obtención de Autorizaciones:</strong>
+                    <div class="sub-section">
+                        <p>Implementar procesos para:</p>
+                        <ul>
+                            <li>Solicitar autorización al recolectar datos, detallando fines.</li>
+                            <li>Revalidar datos previos en 30 días mediante correo o SMS.</li>
+                            <li>Excepciones: datos públicos, emergencias médicas, fines estadísticos.</li>
+                            <li><strong>Ejemplo:</strong> Formulario con casilla de consentimiento explícito.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Medidas de Seguridad:</strong>
+                    <div class="sub-section">
+                        <p>Adoptar medidas técnicas y organizativas:</p>
+                        <ul>
+                            <li><strong>Técnicas:</strong> Cifrado AES-256, firewalls, autenticación multifactor.</li>
+                            <li><strong>Organizativas:</strong> Políticas de acceso por roles, contraseñas seguras.</li>
+                            <li><strong>Auditorías:</strong> Pruebas de penetración trimestrales.</li>
+                            <li><strong>Almacenamiento:</strong> Servidores seguros, backups encriptados.</li>
+                            <li><strong>Ejemplo:</strong> Implementar SIEM para monitoreo en tiempo real.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Ejercicio de Derechos de los Titulares:</strong>
+                    <div class="sub-section">
+                        <p>Configurar procesos para:</p>
+                        <ul>
+                            <li><strong>Acceso:</strong> Gratuito una vez al mes, con tarifas para solicitudes adicionales.</li>
+                            <li><strong>Rectificación:</strong> Corregir datos erróneos en 5 días.</li>
+                            <li><strong>Eliminación:</strong> Borrar datos innecesarios, salvo obligaciones legales.</li>
+                            <li><strong>Revocación:</strong> Permitir retirar consentimiento, salvo contratos.</li>
+                            <li><strong>Plazos:</strong> Consultas (10 días, ampliable a 15); Reclamos (15 días, ampliable a 23).</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Capacitación de Empleados:</strong>
+                    <div class="sub-section">
+                        <p>Educar al personal sobre:</p>
+                        <ul>
+                            <li>Requisitos de Ley 1581 y Decreto 1377.</li>
+                            <li>Políticas internas y manejo seguro de datos.</li>
+                            <li>Reconocimiento de phishing y amenazas de ciberseguridad.</li>
+                            <li><strong>Ejemplo:</strong> Talleres trimestrales y simulacros de violaciones de datos.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Registro con la SIC:</strong>
+                    <div class="sub-section">
+                        <p>Inscribir bases de datos en el Registro Nacional (Decreto 886 de 2014):</p>
+                        <ul>
+                            <li>Detallar tipos de datos, finalidades y responsables.</li>
+                            <li>Notificar violaciones de seguridad en 72 horas.</li>
+                            <li><strong>Ejemplo:</strong> Registrar base de clientes en <a href="https://www.sic.gov.co">sic.gov.co</a>.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Transferencias Internacionales:</strong>
+                    <div class="sub-section">
+                        <p>Asegurar cumplimiento con Decreto 1377:</p>
+                        <ul>
+                            <li>Prohibidas sin consentimiento, salvo excepciones (emergencias, contratos).</li>
+                            <li>Contratos con terceros países para garantizar protección.</li>
+                            <li>Obtener declaración de conformidad de la SIC.</li>
+                            <li><strong>Ejemplo:</strong> Contrato con proveedor en la UE bajo GDPR.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Auditorías Regulares:</strong>
+                    <div class="sub-section">
+                        <p>Realizar revisiones semestrales para:</p>
+                        <ul>
+                            <li>Verificar cumplimiento de políticas y medidas.</li>
+                            <li>Identificar vulnerabilidades mediante auditorías externas.</li>
+                            <li><strong>Ejemplo:</strong> Contratar firma de ciberseguridad para auditoría anual.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Plan de Respuesta a Incidentes:</strong>
+                    <div class="sub-section">
+                        <p>Desarrollar un plan que incluya:</p>
+                        <ul>
+                            <li><strong>Contención:</strong> Desactivar accesos no autorizados.</li>
+                            <li><strong>Notificación:</strong> Informar a la SIC y titulares en 72 horas.</li>
+                            <li><strong>Mitigación:</strong> Actualizar medidas para prevenir recurrencias.</li>
+                            <li><strong>Ejemplo:</strong> Simulacro de brecha de datos para probar respuesta.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Actualización Normativa:</strong>
+                    <div class="sub-section">
+                        <p>Monitorear cambios en:</p>
+                        <ul>
+                            <li>Decreto 1081 de 2015 (marco administrativo).</li>
+                            <li>Decreto 255 de 2022 (actualizaciones normativas).</li>
+                            <li><strong>Ejemplo:</strong> Suscripción a boletines de la SIC.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><strong>Ley 1266 de 2008:</strong>
+                    <div class="sub-section">
+                        <p>Si aplica, garantizar:</p>
+                        <ul>
+                            <li>Confidencialidad de datos financieros.</li>
+                            <li>Acceso a titulares para revisar y corregir información.</li>
+                            <li>Cumplimiento con normativas de burós de crédito.</li>
+                            <li><strong>Ejemplo:</strong> Proceso para que clientes revisen historial crediticio.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="principios" class="slide fade-in">
+            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Principios de datos" class="section-image">
+            <p class="image-caption">Principios éticos para el tratamiento de datos</p>
+            <h2>Principios Clave (Ley 1581 de 2012)</h2>
+            <p>Los principios rectores aseguran un tratamiento ético y legal de los datos:</p>
+            <table>
+                <tr>
+                    <th>Principio</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo Práctico</th>
+                </tr>
+                <tr>
+                    <td>Legalidad</td>
+                    <td>Tratamiento basado en normativas legales.</td>
+                    <td>Procesar datos solo conforme a Ley 1581.</td>
+                </tr>
+                <tr>
+                    <td>Finalidad</td>
+                    <td>Datos recolectados para fines específicos.</td>
+                    <td>Usar datos de clientes solo para facturación, no marketing sin permiso.</td>
+                </tr>
+                <tr>
+                    <td>Libertad</td>
+                    <td>Consentimiento libre, previo e informado.</td>
+                    <td>Obtener autorización escrita para datos sensibles.</td>
+                </tr>
+                <tr>
+                    <td>Veracidad</td>
+                    <td>Datos exactos y actualizados.</td>
+                    <td>Permitir a clientes corregir datos erróneos en 5 días.</td>
+                </tr>
+                <tr>
+                    <td>Transparencia</td>
+                    <td>Titulares informados sobre el uso de sus datos.</td>
+                    <td>Publicar aviso de privacidad en sitio web.</td>
+                </tr>
+                <tr>
+                    <td>Restricción</td>
+                    <td>Limitar acceso según necesidad.</td>
+                    <td>Restringir datos sensibles a personal autorizado.</td>
+                </tr>
+                <tr>
+                    <td>Seguridad</td>
+                    <td>Proteger contra pérdida o acceso no autorizado.</td>
+                    <td>Usar cifrado AES-256 para datos en tránsito.</td>
+                </tr>
+                <tr>
+                    <td>Confidencialidad</td>
+                    <td>Garantizar privacidad en el tratamiento.</td>
+                    <td>No divulgar datos a terceros sin consentimiento.</td>
+                </tr>
+            </table>
+        </section>
+        <section id="plazos" class="slide fade-in">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Gestión de plazos" class="section-image">
+            <p class="image-caption">Cumplimiento de plazos legales</p>
+            <h2>Plazos Legales para Respuestas a Titulares</h2>
+            <p>Los plazos para responder a solicitudes son estrictos y deben cumplirse:</p>
+            <table>
+                <tr>
+                    <th>Tipo de Solicitud</th>
+                    <th>Plazo Base</th>
+                    <th>Ampliación Máxima</th>
+                    <th>Notas</th>
+                </tr>
+                <tr>
+                    <td>Consultas</td>
+                    <td>10 días hábiles</td>
+                    <td>5 días adicionales</td>
+                    <td>Acceso gratuito una vez al mes.</td>
+                </tr>
+                <tr>
+                    <td>Reclamos</td>
+                    <td>15 días hábiles</td>
+                    <td>8 días adicionales</td>
+                    <td>Marcar datos como "en trámite" hasta resolución.</td>
+                </tr>
+            </table>
+            <div class="highlight">
+                <strong>Importante:</strong> Las respuestas deben incluir pruebas de autorización y detalles del tratamiento. Los titulares pueden escalar quejas a la SIC si no se resuelve.
+            </div>
+        </section>
+        <section id="riesgos" class="slide fade-in">
+            
+            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Ciberseguridad" class="section-image">            
+            <p class="image-caption">Protección contra riesgos digitales</p>
+            <h2>Riesgos y Mitigación</h2>
+            <p>El incumplimiento puede generar sanciones, pérdidas financieras y daño reputacional. A continuación, se detallan riesgos y estrategias:</p>
+            <div class="sub-section">
+                <h3>Riesgos Potenciales</h3>
+                <ul>
+                    <li><strong>Sanciones de la SIC:</strong> Multas de hasta 2.000 SMMLV o suspensión.</li>
+                    <li><strong>Violaciones de seguridad:</strong> Robo, pérdida o acceso no autorizado.</li>
+                    <li><strong>Demanda de titulares:</strong> Quejas por negación de derechos.</li>
+                    <li><strong>Daño reputacional:</strong> Pérdida de confianza de clientes.</li>
+                </ul>
+                <h3>Estrategias de Mitigación</h3>
+                <ul>
+                    <li><strong>Cumplimiento proactivo:</strong> Auditorías semestrales.</li>
+                    <li><strong>Seguridad robusta:</strong> Cifrado, SIEM, monitoreo continuo.</li>
+                    <li><strong>Capacitación:</strong> Reducir errores humanos con formación.</li>
+                    <li><strong>Respuesta rápida:</strong> Gestionar incidentes en 72 horas.</li>
+                    <li><strong>Ejemplo:</strong> Implementar DLP (Data Loss Prevention) para detectar fugas.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="conclusion" class="slide fade-in">
+            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Conclusión" class="section-image">
+            <p class="image-caption">Construyendo confianza a través del cumplimiento</p>
+            <h2>Conclusión</h2>
+            <p>La implementación de Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008 requiere un enfoque integral que combine cumplimiento legal, seguridad avanzada y capacitación. Este plan asegura:</p>
+            <ul>
+                <li>Protección de datos personales y financieros.</li>
+                <li>Cumplimiento con normativas colombianas.</li>
+                <li>Mitigación de riesgos legales y operativos.</li>
+                <li>Fortalecimiento de la confianza de stakeholders.</li>
+            </ul>
+            <p>Adoptar estas prácticas es una ventaja estratégica para operar con transparencia y seguridad en el entorno digital.</p>
+            <div class="highlight">
+                <p><strong>Referencias:</strong></p>
+                <ul>
+                    <li>Ley 1581 de 2012: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981">Función Pública</a></li>
+                    <li>Decreto 1377 de 2013: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646">Función Pública</a></li>
+                    <li>Decreto 886 de 2014: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=57338">Función Pública</a></li>
+                    <li>Decreto 1081 de 2015: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=73593">Función Pública</a></li>
+                    <li>Decreto 255 de 2022: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=179087">Función Pública</a></li>
+                    <li>SIC: <a href="https://www.sic.gov.co">sic.gov.co</a></li>
+                </ul>
+            </div>
+        </section>
+        <div style="text-align: center;">
+            <button class="button" onclick="prevSlide()">Anterior</button>
+            <button class="button" onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Implementación de Protección de Datos - Colombia</p>
+        <p>Presentación diseñada para Grupo Energético de las Américas SAS ESP</p>
+    </footer>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(id) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.classList.remove('fade-in');
+            });
+            const targetSlide = document.getElementById(id);
+            targetSlide.classList.add('active');
+            targetSlide.classList.add('fade-in');
+            currentSlide = Array.from(slides).findIndex(slide => slide.id === id);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                slides[currentSlide].classList.remove('active');
+                slides[currentSlide].classList.remove('fade-in');
+                currentSlide--;
+                slides[currentSlide].classList.add('active');
+                slides[currentSlide].classList.add('fade-in');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                slides[currentSlide].classList.remove('active');
+                slides[currentSlide].classList.remove('fade-in');
+                currentSlide++;
+                slides[currentSlide].classList.add('active');
+                slides[currentSlide].classList.add('fade-in');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize first slide
+        slides[0].classList.add('active');
+        slides[0].classList.add('fade-in');
+    </script>
+</body>
+</html>
