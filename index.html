@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,27 +18,30 @@
             line-height: 1.7;
             font-size: 16px;
         }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 30px;
         }
+
         header {
             background: linear-gradient(90deg, #1e3a8a, #3b82f6);
             color: white;
             padding: 50px 20px;
             text-align: center;
             border-radius: 12px 12px 0 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
         }
 
         header {
             position: relative;
-            padding: 50px 20px 50px 220px; /* Ajusta el padding izquierdo para evitar la superposición */
+            padding: 50px 20px 50px 220px;
+            /* Ajusta el padding izquierdo para evitar la superposición */
         }
-    
+
         header img {
             position: absolute;
             top: 50px;
@@ -56,21 +60,26 @@
             opacity: 0.2;
             z-index: 0;
         }
-        header h1, header p {
+
+        header h1,
+        header p {
             position: relative;
             z-index: 1;
         }
+
         header h1 {
             margin: 0;
             font-size: 3em;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         header p {
             font-size: 1.3em;
             margin: 10px 0;
             font-weight: 300;
         }
+
         nav {
             background-color: #1e3a8a;
             padding: 15px;
@@ -78,8 +87,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -88,36 +98,42 @@
             font-size: 1.1em;
             transition: color 0.3s, transform 0.3s;
         }
+
         nav a:hover {
             color: #93c5fd;
             transform: scale(1.1);
         }
+
         section {
             background: white;
             padding: 40px;
             margin: 20px 0;
             border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         section:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
         .section-image {
             width: 100%;
             max-height: 300px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .image-caption {
             font-size: 0.9em;
             color: #4b5563;
             text-align: center;
             margin-top: 5px;
         }
+
         h2 {
             color: #1e3a8a;
             border-bottom: 4px solid #3b82f6;
@@ -126,45 +142,60 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
+
         h3 {
             color: #1e40af;
             margin-top: 30px;
             font-size: 1.6em;
             font-weight: 500;
         }
+
         p {
             margin: 15px 0;
             font-size: 1.1em;
         }
-        ul, ol {
+
+        ul,
+        ol {
             margin: 15px 0;
             padding-left: 40px;
         }
-        ul li, ol li {
+
+        ul li,
+        ol li {
             margin-bottom: 12px;
             font-size: 1.05em;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
             font-size: 1em;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid #d1d5db;
         }
-        th, td {
+
+        th,
+        td {
             padding: 15px;
             text-align: left;
         }
+
         th {
             background-color: #3b82f6;
             color: white;
             font-weight: 600;
         }
+
         td {
             background-color: #f9fafb;
         }
+
         footer {
             background: linear-gradient(90deg, #1e3a8a, #3b82f6);
             color: white;
@@ -174,15 +205,18 @@
             margin-top: 40px;
             font-size: 1em;
         }
+
         .slide {
             display: none;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
         .slide.active {
             display: block;
             opacity: 1;
         }
+
         .button {
             background-color: #3b82f6;
             color: white;
@@ -195,15 +229,18 @@
             font-weight: 500;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         .button:hover {
             background-color: #1e40af;
             transform: scale(1.05);
         }
+
         .sub-section {
             margin-left: 25px;
             padding-left: 25px;
             border-left: 3px solid #93c5fd;
         }
+
         .highlight {
             background-color: #e0f2fe;
             padding: 15px;
@@ -211,51 +248,89 @@
             margin: 15px 0;
             border-left: 5px solid #3b82f6;
         }
+
         .fade-in {
             animation: fadeIn 1s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2em;
             }
+
             header p {
                 font-size: 1.1em;
             }
+
             nav a {
                 display: block;
                 margin: 15px 0;
                 font-size: 1em;
             }
+
             .container {
                 padding: 20px;
             }
+
             section {
                 padding: 25px;
             }
+
             .section-image {
                 max-height: 200px;
             }
         }
+
+        /* Estilos para contenido colapsable */
+        #contexto h3 {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #contexto h3 .toggler {
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            /* El padding y margin se manejan mejor dentro del contenido o en sub-secciones */
+        }
+
+        .collapsible-content.open {
+            max-height: 7000px;
+            /* Ajustar si el contenido es más largo */
+        }
     </style>
 </head>
+
 <body>
 
     <header>
-        <img src="GeamIT.png" alt="Logotipo de GeamIT" style="width: 150px; position: absolute; top: 50px; left: 50px; z-index: 2;">
+        <img src="GeamIT.png" alt="Logotipo de GeamIT"
+            style="width: 150px; position: absolute; top: 50px; left: 50px; z-index: 2;">
         <div class="header-text">
             <h1>Plan Detallado de Implementación de Protección de Datos</h1>
             <p>Conformidad con Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008</p>
             <p>Grupo Energético de las Américas SAS ESP</p>
         </div>
     </header>
-
-
-
-
 
     <nav>
         <a href="#introduccion" onclick="showSlide('introduccion')">Introducción</a>
@@ -268,213 +343,597 @@
     </nav>
     <div class="container">
         <section id="introduccion" class="slide active fade-in">
-            <img src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Concepto de protección de datos" class="section-image">
+            <img src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Concepto de protección de datos" class="section-image">
             <p class="image-caption">Protección de datos en un entorno digital</p>
             <h2>Introducción</h2>
-            <p>La protección de datos personales es esencial para cumplir con las normativas colombianas y generar confianza en clientes, empleados y socios. Las leyes Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008 establecen un marco robusto para garantizar el derecho al habeas data, protegiendo la privacidad y seguridad de la información personal y financiera.</p>
-            <p>Este plan detalla un enfoque integral para implementar estas normativas, incluyendo pasos prácticos, medidas técnicas y estrategias para mitigar riesgos. La meta es asegurar el cumplimiento legal, proteger datos sensibles y fortalecer la reputación empresarial.</p>
+            <p>La protección de datos personales es esencial para cumplir con las normativas colombianas y generar
+                confianza en clientes, empleados y socios. Las leyes Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266
+                de 2008 establecen un marco robusto para garantizar el derecho al habeas data, protegiendo la privacidad
+                y seguridad de la información personal y financiera.</p>
+            <p>Este plan detalla un enfoque integral para implementar estas normativas, incluyendo pasos prácticos,
+                medidas técnicas y estrategias para mitigar riesgos. La meta es asegurar el cumplimiento legal, proteger
+                datos sensibles y fortalecer la reputación empresarial.</p>
             <div class="highlight">
-                <strong>Objetivo:</strong> Establecer un sistema de gestión de datos que cumpla con la legislación, minimice riesgos y promueva la confianza de los stakeholders.
+                <strong>Objetivo:</strong> Establecer un sistema de gestión de datos que cumpla con la legislación,
+                minimice riesgos y promueva la confianza de los stakeholders.
             </div>
         </section>
+
         <section id="contexto" class="slide fade-in">
-            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Marco legal" class="section-image">
+            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Marco legal" class="section-image">
             <p class="image-caption">Documentos legales que rigen la protección de datos</p>
             <h2>Contexto Legal</h2>
-            <h3>Ley 1581 de 2012</h3>
-            <p>Publicada el 17 de octubre de 2012 (Diario Oficial 48587), desarrolla el derecho constitucional al habeas data (Art. 15 y 20), estableciendo principios, derechos y obligaciones para el tratamiento de datos personales.</p>
-            <div class="sub-section">
-                <p><strong>Alcance:</strong> Aplica a entidades públicas y privadas en Colombia, con excepciones:</p>
-                <ul>
-                    <li>Bases personales o domésticas no compartidas.</li>
-                    <li>Datos para seguridad, defensa, inteligencia o periodismo.</li>
-                    <li>Información regulada por Ley 1266 de 2008 o Ley 79 de 1993.</li>
-                </ul>
-                <p><strong>Derechos de los titulares:</strong> Acceso, rectificación, eliminación, revocación y quejas ante la SIC.</p>
-                <p><strong>Obligaciones:</strong> Obtener autorización, garantizar seguridad y registrar bases de datos.</p>
+            <h3 onclick="toggleContent(this)">Ley 1581 de 2012 <span class="toggler">▼</span></h3>
+            <div class="collapsible-content">
+                <p><strong>Ley estatutaria que establece el marco general para la protección de datos personales en
+                        Colombia, desarrollando el derecho constitucional al hábeas data (Art. 15 y 20 de la
+                        Constitución Política).</strong></p>
+
+                <div class="sub-section">
+                    <h4>1. Objeto y Finalidad</h4>
+                    <ul>
+                        <li>Desarrollar el derecho a conocer, actualizar y rectificar datos personales almacenados en
+                            bases de datos.</li>
+                        <li>Garantizar otros derechos fundamentales como la intimidad, buen nombre y libertad de
+                            información.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>2. Ámbito de Aplicación</h4>
+                    <ul>
+                        <li>Aplica a datos personales tratados por entidades públicas o privadas en Colombia.</li>
+                        <li>Incluye tratamientos realizados fuera del país cuando se apliquen normas colombianas por
+                            tratados internacionales.</li>
+                    </ul>
+                    <strong>Excepciones:</strong>
+                    <ul>
+                        <li>Uso doméstico no compartido.</li>
+                        <li>Fines de seguridad, defensa, inteligencia o contrainteligencia.</li>
+                        <li>Periodismo y contenidos editoriales.</li>
+                        <li>Información regulada por las leyes 1266 de 2008 y 79 de 1993.</li>
+                    </ul>
+                    <p><em>Nota: Aunque estas excepciones no están sujetas a la totalidad del régimen, sí deben respetar
+                            los principios generales de protección de datos.</em></p>
+                </div>
+
+                <div class="sub-section">
+                    <h4>3. Principios Rectores del Tratamiento</h4>
+                    <ul>
+                        <li><strong>Legalidad:</strong> Actividad reglada conforme a la ley.</li>
+                        <li><strong>Finalidad:</strong> Debe ser legítima y comunicada al titular.</li>
+                        <li><strong>Libertad:</strong> Se requiere consentimiento libre, previo e informado.</li>
+                        <li><strong>Veracidad o calidad:</strong> Información precisa, actualizada y completa.</li>
+                        <li><strong>Transparencia:</strong> Acceso garantizado al titular sobre el uso de sus datos.
+                        </li>
+                        <li><strong>Acceso y circulación restringida:</strong> Solo accesibles por personas autorizadas.
+                        </li>
+                        <li><strong>Seguridad:</strong> Medidas técnicas y organizativas adecuadas.</li>
+                        <li><strong>Confidencialidad:</strong> Obligación de reserva aun después de terminada la
+                            relación.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>4. Derechos de los Titulares</h4>
+                    <ul>
+                        <li>Acceso, actualización, rectificación y supresión de datos.</li>
+                        <li>Revocar autorización.</li>
+                        <li>Conocer el uso que se da a sus datos.</li>
+                        <li>Presentar quejas ante la Superintendencia de Industria y Comercio (SIC).</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>5. Condiciones de Legalidad</h4>
+                    <ul>
+                        <li><strong>Autorización previa</strong> del titular, salvo excepciones (ej. mandato legal).
+                        </li>
+                        <li><strong>Deber de información:</strong> al momento de la recolección, debe informarse sobre
+                            finalidad, derechos del titular y datos del responsable.</li>
+                        <li><strong>Casos donde no se requiere autorización:</strong> datos públicos, urgencias médicas,
+                            registros civiles, funciones legales de entidades públicas.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>6. Datos Sensibles y de Menores</h4>
+                    <ul>
+                        <li><strong>Datos sensibles:</strong> Solo pueden tratarse con autorización explícita o bajo
+                            excepciones estrictas (salvaguarda vital, procesos judiciales, etc.).</li>
+                        <li><strong>Niños y adolescentes:</strong> Solo datos públicos pueden ser tratados; se
+                            privilegia el interés superior del menor.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>7. Responsabilidades y Deberes</h4>
+                    <strong>Responsables del Tratamiento:</strong>
+                    <ul>
+                        <li>Garantizar derechos.</li>
+                        <li>Conservar autorización.</li>
+                        <li>Implementar políticas de protección.</li>
+                        <li>Notificar novedades.</li>
+                        <li>Reportar incidentes a la SIC.</li>
+                    </ul>
+                    <strong>Encargados del Tratamiento:</strong>
+                    <ul>
+                        <li>Conservar seguridad de la información.</li>
+                        <li>Actualizar datos.</li>
+                        <li>Atender consultas y reclamos.</li>
+                        <li>Abstenerse de circular datos en discusión.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>8. Procedimientos de Reclamos y Consultas</h4>
+                    <ul>
+                        <li><strong>Consultas:</strong> respuesta en 10 días hábiles.</li>
+                        <li><strong>Reclamos:</strong> respuesta en 15 días hábiles; posibilidad de ampliación por 8
+                            días más.</li>
+                        <li><strong>Requisito de procedibilidad:</strong> primero reclamar ante la empresa, luego ante
+                            la SIC.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-section">
+                    <h4>9. Régimen Sancionatorio</h4>
+                    <ul>
+                        <li>La <strong>Superintendencia de Industria y Comercio (SIC)</strong> es la autoridad
+                            competente.</li>
+                        <li>Puede imponer medidas correctivas, sanciones económicas, bloqueos temporales de datos y
+                            ordenar rectificaciones.</li>
+                    </ul>
+                </div>
             </div>
-            <h3>Decreto 1377 de 2013</h3>
-            <p>Publicado el 27 de junio de 2013 (Diario Oficial 48834), reglamenta aspectos operativos de la Ley 1581:</p>
-            <div class="sub-section">
-                <ul>
-                    <li><strong>Autorización:</strong> Previa, expresa, informada; no se infiere del silencio.</li>
-                    <li><strong>Políticas:</strong> Detallar tratamiento y avisos de privacidad.</li>
-                    <li><strong>Transferencias internacionales:</strong> Requieren consentimiento o contratos.</li>
-                    <li><strong>Responsabilidad:</strong> Demostrar cumplimiento proactivo.</li>
-                </ul>
+            <h3 onclick="toggleContent(this)">Decreto 1377 de 2013 <span class="toggler">▼</span></h3>
+            <div class="collapsible-content">
+                <p>Publicado el 27 de junio de 2013 (Diario Oficial 48834), reglamenta aspectos operativos de la Ley
+                    1581:</p>
+                <div class="sub-section">
+                    <h4>1. Finalidad del Decreto</h4>
+                    <ul>
+                        <li>Reglamenta parcialmente la Ley 1581 de 2012.</li>
+                        <li>Establece medidas prácticas para que responsables y encargados cumplan sus obligaciones
+                            legales.</li>
+                        <li>Asegura el ejercicio efectivo del derecho al hábeas data.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>2. Autorización del Titular</h4>
+                    <ul>
+                        <li>Debe ser <strong>previa, expresa e informada</strong>.</li>
+                        <li>No puede inferirse del silencio o inacción del titular.</li>
+                        <li>Puede obtenerse por medios electrónicos, físicos o digitales, siempre que sea verificable.
+                        </li>
+                        <li>Para datos recolectados antes de la ley, se debe informar al titular sobre las políticas y
+                            permitir la revocatoria.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>3. Políticas de Tratamiento</h4>
+                    <ul>
+                        <li>Obligación de contar con una <strong>política de tratamiento de información
+                                personal</strong>, accesible al titular.</li>
+                        <li>Debe incluir: finalidades, derechos del titular, canales de contacto y mecanismos para
+                            cambios en la política.</li>
+                        <li>El <strong>aviso de privacidad</strong> puede usarse cuando no sea posible presentar la
+                            política completa; debe resumirla e indicar cómo acceder a ella.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>4. Transferencia y Transmisión Internacional de Datos</h4>
+                    <ul>
+                        <li><strong>Transferencia internacional:</strong> Requiere consentimiento del titular o que el
+                            país receptor tenga nivel adecuado de protección (verificado por la SIC).</li>
+                        <li>Excepciones: autorización de la SIC, situaciones contractuales específicas, protección de
+                            derechos del titular.</li>
+                        <li><strong>Transmisión internacional (por encargo):</strong> Requiere contrato con cláusulas
+                            específicas sobre protección de datos.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>5. Registro Nacional de Bases de Datos (RNBD)</h4>
+                    <ul>
+                        <li>Las organizaciones deben registrar sus bases de datos ante la SIC.</li>
+                        <li>El registro debe mantenerse actualizado y cumplir los lineamientos técnicos de la SIC.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>6. Responsabilidad Demostrada (Accountability)</h4>
+                    <ul>
+                        <li>Las entidades deben poder <strong>demostrar cumplimiento proactivo</strong> con la Ley 1581.
+                        </li>
+                        <li>Incluye adopción de políticas internas, capacitación, controles y auditorías periódicas,
+                            mecanismos de respuesta ante incidentes y conservación de trazabilidad.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>7. Medidas de Seguridad</h4>
+                    <ul>
+                        <li>Las medidas deben ser proporcionales al tipo de datos y nivel de riesgo.</li>
+                        <li>Incluyen medidas físicas, técnicas, organizativas y administrativas.</li>
+                        <li>Se debe garantizar integridad, confidencialidad y disponibilidad de los datos personales.
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>8. Comunicación de Incidentes</h4>
+                    <ul>
+                        <li>Ante una violación de seguridad que comprometa datos personales, se debe notificar a la SIC
+                            y a los titulares si el incidente compromete sus derechos.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>9. Vigencia y Alcance</h4>
+                    <ul>
+                        <li>Aplica a todos los responsables y encargados del tratamiento, con domicilio en Colombia o
+                            fuera del país cuando se les aplique la legislación colombiana.</li>
+                    </ul>
+                </div>
             </div>
-            <h3>Ley 1266 de 2008</h3>
-            <p>Regula el habeas data financiero, enfocándose en datos crediticios y financieros.</p>
-            <div class="sub-section">
-                <ul>
-                    <li><strong>Enfoque:</strong> Confidencialidad y acceso a datos financieros.</li>
-                    <li><strong>Aplicación:</strong> Burós de crédito, entidades financieras y empresas con datos crediticios.</li>
-                </ul>
+
+            <h3 onclick="toggleContent(this)">Ley 1266 de 2008 <span class="toggler">▼</span></h3>
+            <div class="collapsible-content">
+                <p>Regula el régimen especial del hábeas data financiero en Colombia, estableciendo principios y
+                    procedimientos para el tratamiento de información financiera, crediticia, comercial, de servicios y
+                    proveniente de terceros países.</p>
+                <div class="sub-section">
+                    <h4>1. Objeto y Enfoque</h4>
+                    <ul>
+                        <li>Desarrollar el derecho al <strong>hábeas data financiero</strong>, garantizando el
+                            conocimiento, actualización, rectificación y supresión de datos personales de carácter
+                            financiero y crediticio.</li>
+                        <li>Promueve el acceso y circulación responsable de dicha información, especialmente en el
+                            contexto de riesgo crediticio.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>2. Ámbito de Aplicación</h4>
+                    <ul>
+                        <li>Aplica a:
+                            <ul>
+                                <li><strong>Burós de crédito</strong> (operadores de información).</li>
+                                <li><strong>Entidades financieras</strong>, comerciales y de servicios (fuentes de
+                                    información).</li>
+                                <li><strong>Empresas usuarias</strong> de información financiera y crediticia.</li>
+                                <li>Toda base de datos con fines crediticios, financieros, comerciales o de servicios.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Exclusiones:</strong>
+                            <ul>
+                                <li>Datos mantenidos en ámbitos personales o domésticos.</li>
+                                <li>Inteligencia de Estado o seguridad nacional.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>3. Principales Definiciones</h4>
+                    <ul>
+                        <li><strong>Titular:</strong> Persona natural o jurídica a quien se refiere la información.</li>
+                        <li><strong>Fuente:</strong> Entidad que suministra los datos al operador.</li>
+                        <li><strong>Operador:</strong> Administra bases de datos y suministra la información a los
+                            usuarios.</li>
+                        <li><strong>Usuario:</strong> Persona autorizada para consultar la información.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>4. Tipos de Datos</h4>
+                    <ul>
+                        <li><strong>Públicos:</strong> Estado civil, sentencias ejecutoriadas no reservadas.</li>
+                        <li><strong>Privados:</strong> Íntimos, reservados, solo relevantes para el titular.</li>
+                        <li><strong>Semiprivados:</strong> Interesan al titular y a terceros (ej. historial crediticio).
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>5. Derechos de los Titulares</h4>
+                    <ul>
+                        <li>Conocer, actualizar, rectificar y suprimir datos.</li>
+                        <li>Ser informados sobre los usos y destinatarios de su información.</li>
+                        <li>Acceso gratuito al menos una vez al mes.</li>
+                        <li>Solicitar corrección o eliminación de datos erróneos o caducos.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>6. Deberes de Actores del Sistema</h4>
+                    <strong>Operadores:</strong>
+                    <ul>
+                        <li>Garantizar derechos de hábeas data.</li>
+                        <li>Conservar información segura.</li>
+                        <li>Actualizar datos conforme a lo recibido por las fuentes.</li>
+                        <li>Atender consultas y reclamos.</li>
+                    </ul>
+                    <strong>Fuentes:</strong>
+                    <ul>
+                        <li>Garantizar calidad (veracidad, exactitud, actualidad).</li>
+                        <li>Reportar novedades oportunamente.</li>
+                        <li>Conservar prueba de la autorización, cuando aplique.</li>
+                    </ul>
+                    <strong>Usuarios:</strong>
+                    <ul>
+                        <li>Usar datos solo para fines autorizados.</li>
+                        <li>Conservar la seguridad de la información.</li>
+                        <li>Informar al titular sobre el uso de sus datos, si lo solicita.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>7. Tratamiento de Datos Negativos</h4>
+                    <ul>
+                        <li>El reporte negativo debe ser precedido por <strong>notificación al titular con al menos 20
+                                días de anticipación</strong>.</li>
+                        <li>Una vez saldada la deuda, el dato negativo debe permanecer un máximo de <strong>4
+                                años</strong> desde el pago (con excepciones según la mora).</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>8. Sanciones y Vigilancia</h4>
+                    <ul>
+                        <li><strong>Superintendencia de Industria y Comercio</strong> y <strong>Superintendencia
+                                Financiera</strong> tienen competencia sancionatoria y de vigilancia.</li>
+                        <li>Se puede ordenar la corrección o eliminación de datos.</li>
+                        <li>El reporte exclusivamente negativo está prohibido.</li>
+                    </ul>
+                </div>
+                <div class="sub-section">
+                    <h4>9. Finalidad y Circulación de la Información</h4>
+                    <ul>
+                        <li>La información se puede usar para:
+                            <ul>
+                                <li>Evaluación de riesgos financieros.</li>
+                                <li>Procesos de contratación y cumplimiento legal.</li>
+                                <li>Estudios de mercado con fines estadísticos o comerciales (cuando el titular lo haya
+                                    autorizado).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+
             <div class="highlight">
-                <strong>Autoridad:</strong> La Superintendencia de Industria y Comercio (SIC) supervisa el cumplimiento (<a href="https://www.sic.gov.co">sic.gov.co</a>).
+                <strong>Autoridad:</strong> La Superintendencia de Industria y Comercio (SIC) supervisa el cumplimiento
+                (<a href="https://www.sic.gov.co">sic.gov.co</a>).
             </div>
         </section>
         <section id="plan" class="slide fade-in">
-            <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Plan de acción" class="section-image">
+            <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Plan de acción" class="section-image">
             <p class="image-caption">Estrategia para implementar normativas</p>
             <h2>Plan de Implementación</h2>
-            <p>Un enfoque estructurado para cumplir con las normativas, dividido en pasos prácticos:</p>
+            <p>Un enfoque estructurado para cumplir con las normativas, dividido en fases detalladas:</p>
             <ol>
-                <li><strong>Designación de un Oficial de Protección de Datos (DPO):</strong>
-                    <div class="sub-section">
-                        <p>Nombrar un DPO para:</p>
-                        <ul>
-                            <li>Supervisar cumplimiento de Ley 1581 y Decreto 1377.</li>
-                            <li>Coordinar con la SIC y titulares.</li>
-                            <li>Liderar auditorías y capacitaciones.</li>
-                            <li><strong>Ejemplo:</strong> Designar a un gerente de TI con formación en protección de datos.</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 1: Preparación y Designación del Oficial de Protección de Datos (DPO)</strong>
+                    <p><strong>Objetivo:</strong> Establecer el liderazgo y la estructura organizativa necesarios para
+                        liderar el proyecto de protección de datos en la empresa.</p>
+                    <ul>
+                        <li><strong>Designación del Oficial de Protección de Datos (DPO):</strong>
+                            <ul>
+                                <li>Seleccionar a una persona con conocimientos sólidos en protección de datos y
+                                    normativas colombianas.</li>
+                                <li>Definir sus responsabilidades por escrito, incluyendo supervisar el cumplimiento
+                                    normativo y actuar como punto de contacto con la SIC.</li>
+                                <li>Documentar la designación mediante un acta formal firmada por la dirección de la
+                                    empresa.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Creación de un Comité de Protección de Datos:</strong>
+                            <ul>
+                                <li>Formar un equipo interdisciplinario con representantes de áreas clave como TI,
+                                    Legal, RRHH y Operaciones.</li>
+                                <li>Establecer un cronograma de reuniones periódicas para revisar avances y tomar
+                                    decisiones estratégicas.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Capacitación Inicial del DPO y el Comité:</strong>
+                            <ul>
+                                <li>Organizar sesiones de formación específicas que cubran principios de protección de
+                                    datos, requisitos normativos y derechos de los titulares.</li>
+                                <li>Incluir casos prácticos y ejemplos de sanciones de la SIC para ilustrar la
+                                    importancia del cumplimiento.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Inventario de Datos Personales:</strong>
-                    <div class="sub-section">
-                        <p>Mapear todos los datos procesados:</p>
-                        <ul>
-                            <li><strong>Tipos:</strong> Empleados (nómina), clientes (compras), proveedores (contratos).</li>
-                            <li><strong>Almacenamiento:</strong> Servidores locales, AWS, Google Cloud.</li>
-                            <li><strong>Recolección:</strong> Formularios web, contratos físicos, APIs de terceros.</li>
-                            <li><strong>Acceso:</strong> Roles autorizados (RRHH, marketing, TI).</li>
-                        </ul>
-                        <p><strong>Clasificación:</strong></p>
-                        <ul>
-                            <li><strong>Públicos:</strong> Nombres en directorios públicos.</li>
-                            <li><strong>Semi-privados:</strong> Correos, teléfonos.</li>
-                            <li><strong>Privados:</strong> Salud, finanzas, biometría.</li>
-                            <li><strong>Sensibles:</strong> Religión, datos de menores (consentimiento explícito).</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 2: Inventario y Clasificación de Datos Personales</strong>
+                    <p><strong>Objetivo:</strong> Identificar, documentar y categorizar todos los datos personales que
+                        la empresa procesa para entender su alcance y riesgos asociados.</p>
+                    <ul>
+                        <li><strong>Mapeo Exhaustivo de Datos:</strong>
+                            <ul>
+                                <li>Identificar todas las fuentes de datos personales, incluyendo formularios físicos o
+                                    digitales, bases de datos electrónicas y archivos físicos.</li>
+                                <li>Documentar el flujo completo de los datos: recolección, almacenamiento,
+                                    procesamiento y eliminación.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Clasificación de Datos Según la Ley 1581:</strong>
+                            <ul>
+                                <li>Categorizar los datos en públicos, semi-privados, privados y sensibles.</li>
+                                <li>Crear una matriz de clasificación con ejemplos específicos de datos manejados por la
+                                    empresa.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Evaluación de Riesgos Inicial:</strong>
+                            <ul>
+                                <li>Analizar vulnerabilidades en cada etapa del flujo de datos.</li>
+                                <li>Asignar niveles de riesgo (alto, medio, bajo) y priorizar áreas críticas.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Desarrollo de Políticas de Tratamiento:</strong>
-                    <div class="sub-section">
-                        <p>Crear políticas detalladas:</p>
-                        <ul>
-                            <li>Especificar procesos de recolección, uso, almacenamiento y eliminación.</li>
-                            <li>Garantizar autorizaciones previas y expresas (Decreto 1377).</li>
-                            <li>Prohibir tratamiento de datos sensibles salvo excepciones (consentimiento, interés vital).</li>
-                            <li>Incluir avisos de privacidad accesibles en sitios web y formularios.</li>
-                            <li><strong>Ejemplo de aviso:</strong> "Sus datos se usarán para facturación. Contacte a dpo@empresa.com para ejercer sus derechos."</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 3: Desarrollo de Políticas y Procedimientos</strong>
+                    <p><strong>Objetivo:</strong> Establecer reglas claras y procesos formales para el tratamiento de
+                        datos personales, alineados con las normativas.</p>
+                    <ul>
+                        <li><strong>Elaboración de la Política de Tratamiento de Datos:</strong>
+                            <ul>
+                                <li>Redactar un documento que detalle fines específicos del tratamiento, métodos de
+                                    recolección, almacenamiento, uso y eliminación.</li>
+                                <li>Publicar la política en un lugar accesible y actualizarla ante cambios
+                                    significativos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Creación del Aviso de Privacidad:</strong>
+                            <ul>
+                                <li>Diseñar un texto breve y claro que informe a los titulares sobre el propósito del
+                                    tratamiento, derechos y contacto del DPO.</li>
+                                <li>Incluirlo en formularios, sitios web y puntos de recolección de datos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Procedimientos para Obtener Autorizaciones:</strong>
+                            <ul>
+                                <li>Diseñar formularios físicos y digitales que soliciten consentimiento previo, expreso
+                                    e informado.</li>
+                                <li>Establecer un proceso para revalidar autorizaciones de datos recolectados antes del
+                                    programa.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Políticas Específicas para Datos Sensibles:</strong>
+                            <ul>
+                                <li>Definir reglas estrictas para su tratamiento, incluyendo medidas de seguridad
+                                    adicionales.</li>
+                                <li>Documentar cada caso de tratamiento de datos sensibles con justificación.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Obtención de Autorizaciones:</strong>
-                    <div class="sub-section">
-                        <p>Implementar procesos para:</p>
-                        <ul>
-                            <li>Solicitar autorización al recolectar datos, detallando fines.</li>
-                            <li>Revalidar datos previos en 30 días mediante correo o SMS.</li>
-                            <li>Excepciones: datos públicos, emergencias médicas, fines estadísticos.</li>
-                            <li><strong>Ejemplo:</strong> Formulario con casilla de consentimiento explícito.</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 4: Implementación de Medidas de Seguridad</strong>
+                    <p><strong>Objetivo:</strong> Proteger los datos personales contra accesos no autorizados, pérdidas
+                        o robos mediante medidas técnicas y organizativas.</p>
+                    <ul>
+                        <li><strong>Evaluación de Seguridad Actual:</strong>
+                            <ul>
+                                <li>Realizar una auditoría de las medidas existentes y generar un informe con hallazgos
+                                    y recomendaciones.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implementación de Medidas Técnicas:</strong>
+                            <ul>
+                                <li>Instalar o actualizar firewalls, sistemas de cifrado y autenticación multifactor.
+                                </li>
+                                <li>Configurar copias de seguridad automáticas y seguras.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Medidas Organizativas:</strong>
+                            <ul>
+                                <li>Establecer políticas de acceso basado en roles y procedimientos para trabajo remoto.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Plan de Respuesta a Incidentes:</strong>
+                            <ul>
+                                <li>Desarrollar un protocolo que incluya pasos para contener violaciones, notificar a la
+                                    SIC y titulares, y aplicar medidas correctivas.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Medidas de Seguridad:</strong>
-                    <div class="sub-section">
-                        <p>Adoptar medidas técnicas y organizativas:</p>
-                        <ul>
-                            <li><strong>Técnicas:</strong> Cifrado AES-256, firewalls, autenticación multifactor.</li>
-                            <li><strong>Organizativas:</strong> Políticas de acceso por roles, contraseñas seguras.</li>
-                            <li><strong>Auditorías:</strong> Pruebas de penetración trimestrales.</li>
-                            <li><strong>Almacenamiento:</strong> Servidores seguros, backups encriptados.</li>
-                            <li><strong>Ejemplo:</strong> Implementar SIEM para monitoreo en tiempo real.</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 5: Gestión de Derechos de los Titulares</strong>
+                    <p><strong>Objetivo:</strong> Garantizar que los titulares puedan ejercer sus derechos de manera
+                        eficiente y dentro de los plazos legales.</p>
+                    <ul>
+                        <li><strong>Establecer Canales de Comunicación:</strong>
+                            <ul>
+                                <li>Crear un correo dedicado y/o un portal web para recibir solicitudes.</li>
+                                <li>Publicar estos canales en la política de tratamiento y aviso de privacidad.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Definir Procedimientos Internos:</strong>
+                            <ul>
+                                <li>Diseñar flujos de trabajo para consultas y reclamos, asignando responsables para
+                                    cada tipo de solicitud.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Documentación y Respuestas:</strong>
+                            <ul>
+                                <li>Preparar plantillas de respuesta que incluyan pruebas de autorización del
+                                    tratamiento y detalles del dato solicitado o modificado.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Ejercicio de Derechos de los Titulares:</strong>
-                    <div class="sub-section">
-                        <p>Configurar procesos para:</p>
-                        <ul>
-                            <li><strong>Acceso:</strong> Gratuito una vez al mes, con tarifas para solicitudes adicionales.</li>
-                            <li><strong>Rectificación:</strong> Corregir datos erróneos en 5 días.</li>
-                            <li><strong>Eliminación:</strong> Borrar datos innecesarios, salvo obligaciones legales.</li>
-                            <li><strong>Revocación:</strong> Permitir retirar consentimiento, salvo contratos.</li>
-                            <li><strong>Plazos:</strong> Consultas (10 días, ampliable a 15); Reclamos (15 días, ampliable a 23).</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 6: Capacitación y Sensibilización</strong>
+                    <p><strong>Objetivo:</strong> Educar a todos los empleados sobre sus responsabilidades en la
+                        protección de datos.</p>
+                    <ul>
+                        <li><strong>Desarrollo de un Programa de Capacitación:</strong>
+                            <ul>
+                                <li>Crear módulos que cubran normativas, políticas internas y ejemplos prácticos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implementación de Sesiones Regulares:</strong>
+                            <ul>
+                                <li>Organizar capacitaciones iniciales y periódicas, incluyendo simulacros de
+                                    violaciones de datos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Evaluación del Conocimiento:</strong>
+                            <ul>
+                                <li>Aplicar cuestionarios post-capacitación y ajustar el programa según resultados.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Capacitación de Empleados:</strong>
-                    <div class="sub-section">
-                        <p>Educar al personal sobre:</p>
-                        <ul>
-                            <li>Requisitos de Ley 1581 y Decreto 1377.</li>
-                            <li>Políticas internas y manejo seguro de datos.</li>
-                            <li>Reconocimiento de phishing y amenazas de ciberseguridad.</li>
-                            <li><strong>Ejemplo:</strong> Talleres trimestrales y simulacros de violaciones de datos.</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 7: Registro y Cumplimiento Continuo</strong>
+                    <p><strong>Objetivo:</strong> Asegurar el cumplimiento a largo plazo mediante registro, auditorías y
+                        actualización constante.</p>
+                    <ul>
+                        <li><strong>Registro de Bases de Datos:</strong>
+                            <ul>
+                                <li>Inscribir bases de datos en el Registro Nacional de Bases de Datos (RNBD) de la SIC,
+                                    si aplica.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Auditorías Internas y Externas:</strong>
+                            <ul>
+                                <li>Realizar revisiones semestrales internas y contratar auditorías externas anuales.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Monitoreo de Cambios Normativos:</strong>
+                            <ul>
+                                <li>Suscribirse a boletines de la SIC y revisar actualizaciones legales.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Revisión del Plan de Respuesta a Incidentes:</strong>
+                            <ul>
+                                <li>Actualizar el plan tras simulacros o incidentes reales, incorporando lecciones
+                                    aprendidas.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-                <li><strong>Registro con la SIC:</strong>
-                    <div class="sub-section">
-                        <p>Inscribir bases de datos en el Registro Nacional (Decreto 886 de 2014):</p>
-                        <ul>
-                            <li>Detallar tipos de datos, finalidades y responsables.</li>
-                            <li>Notificar violaciones de seguridad en 72 horas.</li>
-                            <li><strong>Ejemplo:</strong> Registrar base de clientes en <a href="https://www.sic.gov.co">sic.gov.co</a>.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li><strong>Transferencias Internacionales:</strong>
-                    <div class="sub-section">
-                        <p>Asegurar cumplimiento con Decreto 1377:</p>
-                        <ul>
-                            <li>Prohibidas sin consentimiento, salvo excepciones (emergencias, contratos).</li>
-                            <li>Contratos con terceros países para garantizar protección.</li>
-                            <li>Obtener declaración de conformidad de la SIC.</li>
-                            <li><strong>Ejemplo:</strong> Contrato con proveedor en la UE bajo GDPR.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li><strong>Auditorías Regulares:</strong>
-                    <div class="sub-section">
-                        <p>Realizar revisiones semestrales para:</p>
-                        <ul>
-                            <li>Verificar cumplimiento de políticas y medidas.</li>
-                            <li>Identificar vulnerabilidades mediante auditorías externas.</li>
-                            <li><strong>Ejemplo:</strong> Contratar firma de ciberseguridad para auditoría anual.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li><strong>Plan de Respuesta a Incidentes:</strong>
-                    <div class="sub-section">
-                        <p>Desarrollar un plan que incluya:</p>
-                        <ul>
-                            <li><strong>Contención:</strong> Desactivar accesos no autorizados.</li>
-                            <li><strong>Notificación:</strong> Informar a la SIC y titulares en 72 horas.</li>
-                            <li><strong>Mitigación:</strong> Actualizar medidas para prevenir recurrencias.</li>
-                            <li><strong>Ejemplo:</strong> Simulacro de brecha de datos para probar respuesta.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li><strong>Actualización Normativa:</strong>
-                    <div class="sub-section">
-                        <p>Monitorear cambios en:</p>
-                        <ul>
-                            <li>Decreto 1081 de 2015 (marco administrativo).</li>
-                            <li>Decreto 255 de 2022 (actualizaciones normativas).</li>
-                            <li><strong>Ejemplo:</strong> Suscripción a boletines de la SIC.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li><strong>Ley 1266 de 2008:</strong>
-                    <div class="sub-section">
-                        <p>Si aplica, garantizar:</p>
-                        <ul>
-                            <li>Confidencialidad de datos financieros.</li>
-                            <li>Acceso a titulares para revisar y corregir información.</li>
-                            <li>Cumplimiento con normativas de burós de crédito.</li>
-                            <li><strong>Ejemplo:</strong> Proceso para que clientes revisen historial crediticio.</li>
-                        </ul>
-                    </div>
+                <li><strong>Fase 8: Consideraciones Específicas para Ley 1266 de 2008 (Si Aplica)</strong>
+                    <p><strong>Objetivo:</strong> Cumplir con regulaciones adicionales si la empresa maneja datos
+                        financieros o crediticios.</p>
+                    <ul>
+                        <li><strong>Identificación de Datos Financieros:</strong>
+                            <ul>
+                                <li>Determinar si se procesan datos regulados por Ley 1266.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implementación de Medidas Adicionales:</strong>
+                            <ul>
+                                <li>Garantizar confidencialidad con cifrado obligatorio y accesos restringidos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Capacitación Específica:</strong>
+                            <ul>
+                                <li>Educar al personal sobre obligaciones de Ley 1266.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             </ol>
         </section>
         <section id="principios" class="slide fade-in">
-            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Principios de datos" class="section-image">
+            <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Principios de datos" class="section-image">
             <p class="image-caption">Principios éticos para el tratamiento de datos</p>
             <h2>Principios Clave (Ley 1581 de 2012)</h2>
             <p>Los principios rectores aseguran un tratamiento ético y legal de los datos:</p>
@@ -527,7 +986,8 @@
             </table>
         </section>
         <section id="plazos" class="slide fade-in">
-            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Gestión de plazos" class="section-image">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Gestión de plazos" class="section-image">
             <p class="image-caption">Cumplimiento de plazos legales</p>
             <h2>Plazos Legales para Respuestas a Titulares</h2>
             <p>Los plazos para responder a solicitudes son estrictos y deben cumplirse:</p>
@@ -552,15 +1012,18 @@
                 </tr>
             </table>
             <div class="highlight">
-                <strong>Importante:</strong> Las respuestas deben incluir pruebas de autorización y detalles del tratamiento. Los titulares pueden escalar quejas a la SIC si no se resuelve.
+                <strong>Importante:</strong> Las respuestas deben incluir pruebas de autorización y detalles del
+                tratamiento. Los titulares pueden escalar quejas a la SIC si no se resuelve.
             </div>
         </section>
         <section id="riesgos" class="slide fade-in">
-            
-            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Ciberseguridad" class="section-image">            
+
+            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Ciberseguridad" class="section-image">
             <p class="image-caption">Protección contra riesgos digitales</p>
             <h2>Riesgos y Mitigación</h2>
-            <p>El incumplimiento puede generar sanciones, pérdidas financieras y daño reputacional. A continuación, se detallan riesgos y estrategias:</p>
+            <p>El incumplimiento puede generar sanciones, pérdidas financieras y daño reputacional. A continuación, se
+                detallan riesgos y estrategias:</p>
             <div class="sub-section">
                 <h3>Riesgos Potenciales</h3>
                 <ul>
@@ -580,25 +1043,38 @@
             </div>
         </section>
         <section id="conclusion" class="slide fade-in">
-            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1350" alt="Conclusión" class="section-image">
+            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1350"
+                alt="Conclusión" class="section-image">
             <p class="image-caption">Construyendo confianza a través del cumplimiento</p>
             <h2>Conclusión</h2>
-            <p>La implementación de Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008 requiere un enfoque integral que combine cumplimiento legal, seguridad avanzada y capacitación. Este plan asegura:</p>
+            <p>La implementación de Ley 1581 de 2012, Decreto 1377 de 2013 y Ley 1266 de 2008 requiere un enfoque
+                integral que combine cumplimiento legal, seguridad avanzada y capacitación. Este plan asegura:</p>
             <ul>
                 <li>Protección de datos personales y financieros.</li>
                 <li>Cumplimiento con normativas colombianas.</li>
                 <li>Mitigación de riesgos legales y operativos.</li>
                 <li>Fortalecimiento de la confianza de stakeholders.</li>
             </ul>
-            <p>Adoptar estas prácticas es una ventaja estratégica para operar con transparencia y seguridad en el entorno digital.</p>
+            <p>Adoptar estas prácticas es una ventaja estratégica para operar con transparencia y seguridad en el
+                entorno digital.</p>
             <div class="highlight">
                 <p><strong>Referencias:</strong></p>
                 <ul>
-                    <li>Ley 1581 de 2012: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981">Función Pública</a></li>
-                    <li>Decreto 1377 de 2013: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646">Función Pública</a></li>
-                    <li>Decreto 886 de 2014: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=57338">Función Pública</a></li>
-                    <li>Decreto 1081 de 2015: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=73593">Función Pública</a></li>
-                    <li>Decreto 255 de 2022: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=179087">Función Pública</a></li>
+                    <li>Ley 1581 de 2012: <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981">Función
+                            Pública</a></li>
+                    <li>Decreto 1377 de 2013: <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646">Función
+                            Pública</a></li>
+                    <li>Decreto 886 de 2014: <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=57338">Función
+                            Pública</a></li>
+                    <li>Decreto 1081 de 2015: <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=73593">Función
+                            Pública</a></li>
+                    <li>Decreto 255 de 2022: <a
+                            href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=179087">Función
+                            Pública</a></li>
                     <li>SIC: <a href="https://www.sic.gov.co">sic.gov.co</a></li>
                 </ul>
             </div>
@@ -653,6 +1129,21 @@
         // Initialize first slide
         slides[0].classList.add('active');
         slides[0].classList.add('fade-in');
+
+        function toggleContent(h3Element) {
+            const content = h3Element.nextElementSibling; // El div.collapsible-content
+            const toggler = h3Element.querySelector('.toggler');
+
+            if (content && content.classList.contains('collapsible-content')) {
+                content.classList.toggle('open');
+                if (content.classList.contains('open')) {
+                    toggler.textContent = '▲';
+                } else {
+                    toggler.textContent = '▼';
+                }
+            }
+        }
     </script>
 </body>
+
 </html>
